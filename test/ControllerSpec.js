@@ -60,12 +60,18 @@ describe('controller', function () {
 
 	it('should show entries on start-up', function () {
 		// TODO: write test
+		var todo = {title: 'my todo'};
+		setUpModel([todo]);
+
+		subject.setView('');
+
+		expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 	});
 
 	describe('routing', function () {
 
 		it('should show all entries without a route', function () {
-			var todo = {title: 'my todo'};
+            var todo = {title: 'my todo'};
 			setUpModel([todo]);
 
 			subject.setView('');
@@ -84,11 +90,23 @@ describe('controller', function () {
 
 		it('should show active entries', function () {
 			// TODO: write test
+			var todo = {title: 'my todo', active: true };
+			setUpModel([todo]);
+
+			subject.setView('')
+
+			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 		});
 
 		it('should show completed entries', function () {
 			// TODO: write test
-		});
+			var todo = {title: 'my todo', completed: true};
+            setUpModel([todo]);
+
+            subject.setView('')
+
+            expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+        });
 	});
 
 	it('should show the content block when todos exists', function () {

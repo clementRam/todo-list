@@ -104,7 +104,7 @@
         }
 
         randomId();
-        
+
         // If an ID was actually given, find the item and update each property
         if (id) {
             for (var i = 0; i < todos.length; i++) {
