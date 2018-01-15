@@ -83,27 +83,17 @@
         callback = callback || function () {
         };
 
+        //Generate an ID
+        var countId = data.todos.length;
+        var newId = countId++;
+        
         // Generate an ID
-        var newId = "";
-        var charset = "0123456789";
-
-        function randomId() {
-            for (var i = 0; i < 6; i++) {
-                newId += charset.charAt(Math.floor(Math.random() * charset.length));
-            }
-
-            for (var i = 0; i < todos.length; i++) {
-                console.log(todos[i].id, newId)
-                if (todos[i].id === parseInt(newId)) {
-                    randomId();
-                    break;
-                }
-            }
-
-            return newId;
-        }
-
-        randomId();
+        // var newId = "";
+        // var charset = "0123456789";
+        //
+        // for (var i = 0; i < 6; i++) {
+        //     newId += charset.charAt(Math.floor(Math.random() * charset.length));
+        // }
 
         // If an ID was actually given, find the item and update each property
         if (id) {
