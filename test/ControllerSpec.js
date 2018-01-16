@@ -184,12 +184,12 @@ describe('controller', function () {
 
 		it('should update the view', function () {
 			// TODO: write test
-			// var todo = {id: 10, title: 'my todo'};
-			// setUpModel([todo]);
-			// console.log(setUpModel([todo]));
-			// subject.setView('');
-            //
-			// expect(view.render).toHaveBeenCalledWith('');
+			var todo = {id: 10, title: 'my todo'};
+			setUpModel([todo]);
+
+			subject.setView('');
+
+			expect(view.render).toHaveBeenCalledWith('save');
 		});
 	});
 

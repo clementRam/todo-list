@@ -86,7 +86,7 @@
         //Generate an ID
         var countId = data.todos.length;
         var newId = countId++;
-        
+
         // Generate an ID
         // var newId = "";
         // var charset = "0123456789";
