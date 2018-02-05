@@ -1,4 +1,11 @@
 /*global app, $on */
+import './controller.js';
+import './helpers.js';
+import './model.js';
+import './store.js';
+import './template.js';
+import './view.js';
+
 (function () {
 	'use strict';
 

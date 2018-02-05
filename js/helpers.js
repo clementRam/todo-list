@@ -31,7 +31,7 @@
 		// https://developer.mozilla.org/en-US/docs/Web/Events/blur
 		var useCapture = type === 'blur' || type === 'focus';
 
-		window.$on(target, type, dispatchEvent, useCapture);
+        window.$on(target, type, dispatchEvent, useCapture);
 	};
 
 	// Find the element's parent with the given tag name:
