@@ -1,4 +1,8 @@
-/*global app, $on */
+//import css
+import './../node_modules/todomvc-common/base.css';
+import './../index.css';
+//import js
+import './../node_modules/todomvc-common/base.js';
 import './controller.js';
 import './helpers.js';
 import './model.js';
@@ -6,6 +10,7 @@ import './store.js';
 import './template.js';
 import './view.js';
 
+/*global app, $on */
 (function () {
 	'use strict';
 
