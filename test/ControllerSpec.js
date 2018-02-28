@@ -212,28 +212,22 @@ describe('controller', function () {
 
 			// TODO: write test
 
-            setUpModel([]);
+			setUpModel([]);
 
-            subject.setView('');
+			subject.setView('');
 
-            view.render.calls.reset();
-            model.read.calls.reset();
-            model.read.and.callFake(function (callback) {
+			view.trigger('newTodo', 'new todo');
+
+            model.create.and.callFake(function (callback) {
                 callback([{
-                    title: 'a new todo',
-                    completed: false
+                    title: 'new todo'
                 }]);
             });
 
-            view.trigger('newTodo', 'a new todo');
+            expect(model.create).toHaveBeenCalled();
 
-            expect(model.read).toHaveBeenCalled();
 
-            expect(view.render).toHaveBeenCalledWith('showEntries', [{
-                title: 'a new todo',
-                completed: false
-            }]);
-		});
+        });
 
 		it('should add a new todo to the view', function () {
 			setUpModel([]);
@@ -275,15 +269,13 @@ describe('controller', function () {
 
 			// TODO: write test
 
-            var todo = {id: 42, title: 'my todo', completed: true};
+            var todo = {id: 42, title: 'my todo'};
             setUpModel([todo]);
 
             subject.setView('');
             view.trigger('itemRemove', {id: 42});
 
             expect(model.remove).toHaveBeenCalledWith(42, jasmine.any(Function));
-
-            expect(model.remove).toHaveBeenCalledWith(42);
 		});
 
 		it('should remove an entry from the view', function () {
