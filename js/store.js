@@ -85,7 +85,7 @@
 
         //Generate an ID
         var countId = data.todos.length;
-        var newId = countId++;
+        var newId = countId+1;
 
         // Generate an ID
         // var newId = "";
