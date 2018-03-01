@@ -3,9 +3,18 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './js/app.js',
+    entry: {
+        base: ['./node_modules/todomvc-common/base.js', './node_modules/todomvc-common/base.css'],
+        helpers: './js/helpers.js',
+        store: './js/store.js',
+        model: './js/model.js',
+        template: './js/template.js',
+        view: './js/view.js',
+        controller: './js/controller.js',
+        app: ['./js/app.js', './index.css']
+    },
     output: {
-        filename: 'main.min.js',
+        filename: 'js/[name].min.js',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
@@ -13,7 +22,10 @@ module.exports = {
             include: /\.min\.js$/,
             minimize: true
         }),
-        new ExtractTextPlugin("index.min.css")
+        new ExtractTextPlugin({
+            filename: 'css/[name].min.css',
+            allChunks: true,
+        }),
     ],
     module: {
         rules: [
