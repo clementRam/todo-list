@@ -24,7 +24,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: 'css/[name].min.css',
-            allChunks: true,
+            allChunks: true,dz
         }),
     ],
     module: {
